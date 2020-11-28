@@ -16,8 +16,11 @@
         <td><%= article.description %></td>
         <td> <%= link_to 'Show' , articles1_path(article) %> </td>
         <td> <%= link_to 'Edit' , edit_articles1_path(article)%> </td>
-        <td> <%= link_to 'Delete' , articles1_path(article), method: :delete %> </td>
+        <td> <%= link_to 'Delete' , articles1_path(article), method: :delete, data: { confirm: 'Are you sure?' } %> </td>
       </tr>
     <% end %>
   </tbody>
 </table> 
+<p>
+<%= link_to 'Create New Article', new_articles1_path()%>
+</p>

@@ -3,3 +3,8 @@
 
 <p>Title : <%= @article.title %> <p>
 <p>Description : <%= @article.description %> <p>
+<div>
+<%= link_to 'Edit' , edit_articles1_path(@article)%> |
+<%= link_to 'Delete' , articles1_path(@article), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Return To Home' , articles1_index_path %> 
+</div>
