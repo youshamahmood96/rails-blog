@@ -16,10 +16,13 @@
     </h5>
     <p class="card-text"><%= pluralize(user.articles1s.count, "article") %></p>
     <button type="button" class="btn btn-outline-success">
+    
     <%=  link_to 'View Profile', user, class:'text-success' %></button>
-
+    
+<% if logged_in? && user === current_user %>
 <button type="button" class="btn btn-outline-info">
 <%= link_to 'Edit Profile' , edit_user_path(user),class:'text-info' %></button>
+<% end %>
   </div>
   <div class="card-footer text-muted">
     <small>
