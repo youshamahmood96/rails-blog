@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_232147) do
+ActiveRecord::Schema.define(version: 2020_12_01_021338) do
+
+  create_table "article_categories", force: :cascade do |t|
+    t.integer "articles1_id"
+    t.integer "category_id"
+  end
 
   create_table "articles1s", force: :cascade do |t|
     t.string "title"

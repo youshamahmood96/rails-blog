@@ -13,6 +13,7 @@ class Articles1Controller < ApplicationController
         @article = Articles1.new
     end
     def create
+        byebug
        @article = Articles1.new(params.require(:article).permit(:title,:description))
        @article.user = current_user
        if @article.save
@@ -39,7 +40,7 @@ class Articles1Controller < ApplicationController
         @article = Articles1.find(params[:id])
     end
     def white_list
-        params.require(:articles1).permit(:title,:description)
+        params.require(:articles1).permit(:title,:description, category_ids: [])
     end
     def require_same_user
         if current_user != @article.user && !current_user.admin?
